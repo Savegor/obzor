@@ -58,6 +58,35 @@ escapeinside={\%*}{*)}   % если нужно добавить коммента
         \label{index_rez}
     \end{equation}
 
-    
+        \begin{figure}[!h]
+    \centering
+    \includegraphics[scale=0.6]{23.jpg}
+    \caption{Потоки, блоки, сетки}
+    \label{}
+    \end{figure}
+
+    Пример кода на с++, программа выводит Hello World!
+    \begin{lstlisting}[label=some-code,caption= Первый код]
+    #include <stdio.h>
+    #include <iostream>
+    using namespace std;
+    __global__ void kernel()
+    {
+    printf("Hello World!\n");
+    }
+
+    int main()
+    {
+    kernel<<<2,2>>>();
+    kernel<<<3,2>>>();
+
+    printf("Hello from CPU! \n");
+
+    cudaDeviceSynchronize();
+
+    return 0;
+    }   
+
+    \end{lstlisting}
 
  \end{document}
